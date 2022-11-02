@@ -1,4 +1,4 @@
-package test.java;
+package test.java.integration;
 
 import net.sf.jabref.JabRef;
 import org.junit.Assert;
