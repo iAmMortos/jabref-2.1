@@ -4,9 +4,7 @@ import net.sf.jabref.JabRef;
 import org.junit.Assert;
 import org.junit.Test;
 
-import java.util.ArrayList;
-
-public class JabRefTest
+public class JabRefIntegrationTests
 {
   @Test
   public void testJabRefExistence()
