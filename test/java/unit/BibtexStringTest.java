@@ -1,4 +1,4 @@
-package test.java.unit;
+package java.unit;
 
 import net.sf.jabref.BibtexString;
 import org.junit.Assert;
