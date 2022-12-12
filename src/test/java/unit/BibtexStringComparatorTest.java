@@ -58,4 +58,32 @@ public class BibtexStringComparatorTest
     int comp = bsc.compare(s1, s2);
     Assert.assertTrue(comp > 0);
   }
+
+  @Test
+  public void testRefsFalseDiffNamesEQ()
+  {
+    BibtexString s1;
+    BibtexString s2;
+    BibtexStringComparator bsc = new BibtexStringComparator(false);
+
+    s1 = new BibtexString("ID", "A", "#ABC# #DEF# #GHI#");
+    s2 = new BibtexString("ID", "A", "#ABC# #DEF# #GHI#");
+    int comp = bsc.compare(s1, s2);
+    Assert.assertEquals(comp, 0);
+  }
+  
+  @Test
+  public void testConsiderDiffRefs()
+  {
+    BibtexString s1;
+    BibtexString s2;
+    BibtexStringComparator bsc = new BibtexStringComparator(true);
+    
+    s1 = new BibtexString("ID1", "B", "#ABC# #DEF# #GHI#");
+    s2 = new BibtexString("ID2", "A", "#JKL# #MNO# #PQR# #STU#");
+    
+    int res = bsc.compare(s1, s2);
+    
+    Assert.assertTrue(res < 0);
+  }
 }
